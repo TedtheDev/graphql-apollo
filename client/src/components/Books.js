@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import styled from 'styled-components';
 
 import Book from './Book';
 
@@ -13,6 +14,10 @@ const GET_BOOKS = gql`
     }
 `;
 
+const BooksDiv = styled.div`
+    grid-area: main;
+`;
+
 class Books extends Component {
     render() {
         return (
@@ -23,11 +28,11 @@ class Books extends Component {
                         if(loading) return <div>Loading...</div>;
                         if(error) return <div>Error</div>;
                         return (
-                            <div>
+                            <BooksDiv>
                                 {
                                     data.books.map(book => <Book title={book.title} author={book.author} />)
                                 }
-                            </div>
+                            </BooksDiv>
                         )
                     }
                 }

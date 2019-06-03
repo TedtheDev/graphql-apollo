@@ -11,10 +11,12 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: 10% auto;
+  grid-template-columns: 10% 1fr 10%;
+  grid-template-areas:
+    "header header header"
+    ". main .";
   font-size: calc(10px + 2vmin);
   color: white;
 }

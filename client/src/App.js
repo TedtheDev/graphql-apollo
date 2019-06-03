@@ -6,9 +6,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Apollo and GraphQL
+        <div style={{gridArea:'header'}}>Apollo and GraphQL</div>
+        <Books />
       </header>
-      <Books />
     </div>
   );
 }
