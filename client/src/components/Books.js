@@ -10,6 +10,9 @@ const GET_BOOKS = gql`
         books {
             title
             author
+            comments {
+                comment
+            }
         }
     }
 `;
@@ -30,7 +33,7 @@ class Books extends Component {
                         return (
                             <BooksDiv>
                                 {
-                                    data.books.map(book => <Book title={book.title} author={book.author} />)
+                                    data.books.map(book => <Book title={book.title} author={book.author} comments={book.comments}/>)
                                 }
                             </BooksDiv>
                         )
